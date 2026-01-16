@@ -430,7 +430,7 @@ function displayTournamentsOnMap(tournaments, forceCenter = null) {
 function createPopupContent(tournament) {
   const title = tournament.libelle || 'Tournoi';
   const clubName = tournament.nomClub || "";
-  const date = formatDateRange(tournament.dateDebut, tournament.dateFin);
+  const dateStr = formatDateRange(tournament.dateDebut, tournament.dateFin);
 
   const adresse = [tournament.installation?.adresse1, tournament.installation?.adresse2].filter(Boolean).join(", ");
   const ville = [tournament.installation?.codePostal, tournament.installation?.ville].filter(Boolean).join(' ');
@@ -442,6 +442,13 @@ function createPopupContent(tournament) {
     : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddressStr)}`;
 
   const level = formatNature(tournament.epreuves?.[0]?.typeEpreuve) || '';
+
+  // Icons (Lucide-style SVGs)
+  const iconCalendar = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`;
+  const iconMapPin = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>`;
+  const iconPhone = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>`;
+  const iconMail = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>`;
+  const iconBuilding = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="2"></line><line x1="15" y1="22" x2="15" y2="2"></line><line x1="4" y1="6" x2="9" y2="6"></line><line x1="4" y1="10" x2="9" y2="10"></line><line x1="4" y1="14" x2="9" y2="14"></line><line x1="4" y1="18" x2="9" y2="18"></line><line x1="15" y1="6" x2="20" y2="6"></line><line x1="15" y1="10" x2="20" y2="10"></line><line x1="15" y1="14" x2="20" y2="14"></line><line x1="15" y1="18" x2="20" y2="18"></line></svg>`;
 
   // Contact info - exhaustive extraction
   const phone = tournament.contact?.telPortable ||
@@ -468,39 +475,44 @@ function createPopupContent(tournament) {
   return `
     <div class="tournament-popup">
       <div class="popup-header">
-        <div class="popup-title">🎾 ${title}</div>
-        ${clubName ? `<div class="popup-club">🏢 ${clubName}</div>` : ''}
-      </div>
-      <div class="popup-info-section">
-        <div class="popup-date">
-          <span class="popup-icon">📅</span>
-          ${date}
-        </div>
-        <div class="popup-location">
-          <span class="popup-icon">📍</span>
-          <a href="${gMapsUrl}" target="_blank" class="address-link-universal">
-            ${fullLoc}
-          </a>
-        </div>
+        <div class="popup-title">${title}</div>
+        ${clubName ? `<div class="popup-club">${iconBuilding} ${clubName}</div>` : ''}
       </div>
       
-      <div class="popup-contact-grid">
-        ${phone ? `
-          <a href="tel:${phoneClean}" class="popup-contact-item" onclick="window.location.href='tel:${phoneClean}'; event.stopPropagation();">
-            <span class="popup-icon">📞</span> ${formatPhone(phone)}
-          </a>
-        ` : ''}
-        ${email ? `
-          <a href="mailto:${email.trim().toLowerCase()}" class="popup-contact-item" onclick="window.location.href='mailto:${email.trim().toLowerCase()}'; event.stopPropagation();">
-            <span class="popup-icon">📧</span> ${email.trim().toLowerCase()}
-          </a>
-        ` : ''}
+      <div class="popup-content-body">
+        <div class="popup-info-section">
+          <div class="popup-detail-row">
+            <span class="popup-detail-icon">${iconCalendar}</span>
+            <span class="popup-detail-text">${dateStr}</span>
+          </div>
+          <div class="popup-detail-row">
+            <span class="popup-detail-icon">${iconMapPin}</span>
+            <a href="${gMapsUrl}" target="_blank" class="popup-address-link">
+              ${fullLoc}
+            </a>
+          </div>
+        </div>
+        
+        <div class="popup-action-grid">
+          ${phone ? `
+            <a href="tel:${phoneClean}" class="popup-action-item" title="Appeler">
+              <span class="popup-action-icon">${iconPhone}</span>
+              <span class="popup-action-label">${formatPhone(phone)}</span>
+            </a>
+          ` : ''}
+          ${email ? `
+            <a href="mailto:${email.trim().toLowerCase()}" class="popup-action-item" title="Envoyer un email">
+              <span class="popup-action-icon">${iconMail}</span>
+              <span class="popup-action-label">Email</span>
+            </a>
+          ` : ''}
+        </div>
       </div>
 
       <div class="popup-footer">
         ${level ? `<span class="popup-level-badge">${level}</span>` : ''}
-        <a href="${registrationUrl}" target="_blank" class="popup-cta-btn">
-          Lien Tournoi Ten'up
+        <a href="${registrationUrl}" target="_blank" class="popup-cta-button">
+          S'inscrire sur Ten'Up
         </a>
       </div>
     </div>
@@ -1153,59 +1165,59 @@ const fpEnd = flatpickr("#end-date", {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 function initMobileUI() {
-    const btnFilter = document.getElementById('mobile-filter-toggle');
-    const sidebar = document.querySelector('.sidebar');
-    const btnMap = document.getElementById('mobile-view-map');
-    const btnList = document.getElementById('mobile-view-list');
-    
-    // Default view on mobile: Map
-    if (window.innerWidth <= 768) {
-        document.body.classList.add('view-map');
-    }
+  const btnFilter = document.getElementById('mobile-filter-toggle');
+  const sidebar = document.querySelector('.sidebar');
+  const btnMap = document.getElementById('mobile-view-map');
+  const btnList = document.getElementById('mobile-view-list');
 
-    // Toggle Sidebar (Modal)
-    if (btnFilter) {
-        btnFilter.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-        });
-    }
+  // Default view on mobile: Map
+  if (window.innerWidth <= 768) {
+    document.body.classList.add('view-map');
+  }
 
-    // Close sidebar when clicking outside (on map/content)
-    document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768 && 
-            sidebar && sidebar.classList.contains('active') && 
-            !sidebar.contains(e.target) && 
-            !btnFilter.contains(e.target)) {
-            sidebar.classList.remove('active');
-        }
+  // Toggle Sidebar (Modal)
+  if (btnFilter) {
+    btnFilter.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
     });
+  }
 
-    // Switch to Map View
-    if (btnMap) {
-        btnMap.addEventListener('click', () => {
-            document.body.classList.add('view-map');
-            document.body.classList.remove('view-list');
-            
-            btnMap.classList.add('active');
-            if (btnList) btnList.classList.remove('active');
-            
-            // Critical: Invalidating map size to fill container
-            setTimeout(() => {
-                if (window.map) window.map.invalidateSize();
-            }, 100);
-        });
+  // Close sidebar when clicking outside (on map/content)
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768 &&
+      sidebar && sidebar.classList.contains('active') &&
+      !sidebar.contains(e.target) &&
+      !btnFilter.contains(e.target)) {
+      sidebar.classList.remove('active');
     }
+  });
 
-    // Switch to List View
-    if (btnList) {
-        btnList.addEventListener('click', () => {
-            document.body.classList.remove('view-map');
-            document.body.classList.add('view-list');
-            
-            btnList.classList.add('active');
-            if (btnMap) btnMap.classList.remove('active');
-        });
-    }
+  // Switch to Map View
+  if (btnMap) {
+    btnMap.addEventListener('click', () => {
+      document.body.classList.add('view-map');
+      document.body.classList.remove('view-list');
+
+      btnMap.classList.add('active');
+      if (btnList) btnList.classList.remove('active');
+
+      // Critical: Invalidating map size to fill container
+      setTimeout(() => {
+        if (window.map) window.map.invalidateSize();
+      }, 100);
+    });
+  }
+
+  // Switch to List View
+  if (btnList) {
+    btnList.addEventListener('click', () => {
+      document.body.classList.remove('view-map');
+      document.body.classList.add('view-list');
+
+      btnList.classList.add('active');
+      if (btnMap) btnMap.classList.remove('active');
+    });
+  }
 }
 
 // Initialize when DOM is ready
