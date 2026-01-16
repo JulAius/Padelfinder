@@ -684,7 +684,11 @@ function render(forceCenter = null) {
 
   // Render cards
   resultsEl.innerHTML = "";
-  sorted.forEach((it) => resultsEl.appendChild(renderCard(it)));
+  if (sorted.length === 0) {
+    showEmptyState();
+  } else {
+    sorted.forEach((it) => resultsEl.appendChild(renderCard(it)));
+  }
 
   // Update map and timeline
   if (sorted.length > 0) {
@@ -1242,3 +1246,26 @@ function initMobileUI() {
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', initMobileUI);
+
+function showEmptyState() {
+  const isInitial = rawItems.length === 0;
+  const title = isInitial ? "Bienvenue sur Padel Finder Pro" : "Aucun tournoi trouvé";
+  const desc = isInitial
+    ? "Commencez par entrer une ville dans la barre de recherche pour découvrir les tournois à proximité."
+    : "Essayez de modifier vos filtres ou d'élargir votre zone de recherche pour trouver plus de résultats.";
+
+  const icon = isInitial
+    ? `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>`
+    : `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4.5 16.5c-1.5 1.26-2 2.67-2 3.5 0 1 2 1 2 1s.5-1 1-1h13c.5 0 1 1 1 1s2 0 2-1c0-.83-.5-2.24-2-3.5"></path><path d="M15 14.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"></path><path d="M9 14.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>`;
+
+  resultsEl.innerHTML = `
+    <div class="empty-state">
+      <div class="empty-state-icon">
+        ${icon}
+      </div>
+      <h3>${title}</h3>
+      <p>${desc}</p>
+    </div>
+  `;
+}
+
