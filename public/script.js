@@ -851,6 +851,17 @@ function renderCard(it) {
     ? `https://www.google.com/maps/search/?api=1&query=${it.installation.lat},${it.installation.lng}`
     : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
 
+  // Registration link (TenUp)
+  const tournamentId = it.id || it.originalId?.replace("FED_", "");
+  const registrationUrl = tournamentId
+    ? `https://tenup.fft.fr/tournoi/${tournamentId}`
+    : `https://tenup.fft.fr/recherche/tournois?q=${encodeURIComponent(it.nomClub || '')}`;
+
+  const registerBtn = card.querySelector(".btn-register-card");
+  if (registerBtn) {
+    registerBtn.href = registrationUrl;
+  }
+
   addressBlock.innerHTML = `
     <a href="${gMapsUrl}" target="_blank" class="clickable-address">
       <span class="address-line">${adresse || ""}</span>
