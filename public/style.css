@@ -2045,3 +2045,166 @@ body::before {
   bottom: -75%;
   right: -20%;
 }
+/* ═══════════════════════════════════════════════════════════════════════════
+   MOBILE & RESPONSIVE DESIGN (2026 App-Like Feel)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Defaults hidden on desktop */
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  /* Adjust layout for tablets/small laptops */
+  .sidebar { width: 280px; padding: 1.5rem 1rem; }
+  .map-container { height: 450px; }
+}
+
+@media (max-width: 768px) {
+  /* --- Global Mobile Layout --- */
+  .app {
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height */
+    overflow: hidden;
+  }
+  
+  .layout-container {
+    flex-direction: column;
+    height: calc(100% - 60px - 70px); /* Minus header & mobile nav */
+    overflow: hidden;
+  }
+  
+  .content-main {
+    padding: 1rem;
+    padding-bottom: 80px; /* Space for mobile nav */
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  /* --- Navigation Bar (Mobile Only) --- */
+  .mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(19, 19, 21, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border);
+    padding: 0.75rem 1.25rem;
+    padding-bottom: env(safe-area-inset-bottom, 0.75rem); /* iPhone Home Bar safe area */
+    z-index: 3000;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
+  }
+
+  .mobile-nav-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .mobile-nav-btn svg {
+    color: var(--text-primary);
+  }
+  
+  .mobile-view-switcher {
+    display: flex;
+    background: var(--bg-tertiary);
+    border-radius: 100px;
+    padding: 4px;
+    border: 1px solid var(--border);
+  }
+  
+  .view-switch-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .view-switch-btn.active {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 2px 8px rgba(20, 184, 166, 0.4);
+  }
+
+  /* --- Sidebar (Drawer Mode) --- */
+  .sidebar {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4000;
+    background: var(--bg-primary);
+    transform: translateY(100%); /* Hidden by default */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+  
+  .sidebar.active {
+    transform: translateY(0);
+  }
+  
+  /* Add close button for sidebar */
+  .sidebar-header::after {
+    content: "✕";
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    pointer-events: none; /* Handled by JS on parent click if needed, or we add real btn */
+  }
+
+  /* --- View Toggling --- */
+  /* If map view is active, hide results & timeline */
+  body.view-map .map-section { display: block; height: 100%; }
+  body.view-map .map-container { height: 100%; border-radius: 0; border: none; margin: 0; }
+  body.view-map .timeline-section,
+  body.view-map .results-section { display: none; }
+  body.view-map .content-main { padding: 0; } /* Full screen map */
+  
+  /* If list view is active, hide map */
+  body.view-list .map-section { display: none; }
+  body.view-list .timeline-section,
+  body.view-list .results-section { display: block; }
+  
+  /* Refinements */
+  .hero { display: none; } /* Optional: Hide hero to save space, or make very compact */
+  .results-grid { grid-template-columns: 1fr; }
+  
+  .filter-section { padding-bottom: 2rem; } /* More touch space */
+  
+  /* Floating Map Controls on Mobile */
+  .map-filters {
+    top: auto;
+    bottom: 90px;
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+    max-width: none;
+    transform: translateY(150%); /* Hidden by default */
+    transition: transform 0.3s ease;
+  }
+  body.view-map .map-filters.active { transform: translateY(0); }
+}

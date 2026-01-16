@@ -1147,3 +1147,66 @@ const fpEnd = flatpickr("#end-date", {
 });
 
 // Sync reset button with flatpickr is now handled in resetFilters
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MOBILE UI LOGIC
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+function initMobileUI() {
+    const btnFilter = document.getElementById('mobile-filter-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    const btnMap = document.getElementById('mobile-view-map');
+    const btnList = document.getElementById('mobile-view-list');
+    
+    // Default view on mobile: Map
+    if (window.innerWidth <= 768) {
+        document.body.classList.add('view-map');
+    }
+
+    // Toggle Sidebar (Modal)
+    if (btnFilter) {
+        btnFilter.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    }
+
+    // Close sidebar when clicking outside (on map/content)
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 && 
+            sidebar && sidebar.classList.contains('active') && 
+            !sidebar.contains(e.target) && 
+            !btnFilter.contains(e.target)) {
+            sidebar.classList.remove('active');
+        }
+    });
+
+    // Switch to Map View
+    if (btnMap) {
+        btnMap.addEventListener('click', () => {
+            document.body.classList.add('view-map');
+            document.body.classList.remove('view-list');
+            
+            btnMap.classList.add('active');
+            if (btnList) btnList.classList.remove('active');
+            
+            // Critical: Invalidating map size to fill container
+            setTimeout(() => {
+                if (window.map) window.map.invalidateSize();
+            }, 100);
+        });
+    }
+
+    // Switch to List View
+    if (btnList) {
+        btnList.addEventListener('click', () => {
+            document.body.classList.remove('view-map');
+            document.body.classList.add('view-list');
+            
+            btnList.classList.add('active');
+            if (btnMap) btnMap.classList.remove('active');
+        });
+    }
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initMobileUI);

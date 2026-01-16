@@ -220,6 +220,38 @@
     <footer class="footer">
       <p>Données TenUp FFT • Projet Open Source</p>
     </footer>
+    <!-- Mobile Control Bar (Sticky Bottom) -->
+    <nav class="mobile-nav">
+      <button id="mobile-filter-toggle" class="mobile-nav-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+        </svg>
+        <span>Filtres</span>
+      </button>
+
+      <div class="mobile-view-switcher">
+        <button id="mobile-view-map" class="view-switch-btn active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <map name=""></map>
+            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
+            <line x1="8" y1="2" x2="8" y2="18" />
+            <line x1="16" y1="6" x2="16" y2="22" />
+          </svg>
+          Carte
+        </button>
+        <button id="mobile-view-list" class="view-switch-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6" />
+            <line x1="8" y1="12" x2="21" y2="12" />
+            <line x1="8" y1="18" x2="21" y2="18" />
+            <line x1="3" y1="6" x2="3.01" y2="6" />
+            <line x1="3" y1="12" x2="3.01" y2="12" />
+            <line x1="3" y1="18" x2="3.01" y2="18" />
+          </svg>
+          Liste
+        </button>
+      </div>
+    </nav>
   </div>
 
   <template id="card-template">
