@@ -71,6 +71,15 @@ app.add_middleware(
 
 
 def load_token_file():
+    # 1. Try environment variable (for Vercel)
+    env_token = os.environ.get("TENUP_TOKEN")
+    if env_token:
+        try:
+            return json.loads(env_token)
+        except Exception as e:
+            print(f"Failed to parse TENUP_TOKEN: {e}")
+
+    # 2. Try local file
     if not os.path.exists(TOKEN_PATH):
         return None
     try:
