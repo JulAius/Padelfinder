@@ -1,0 +1,3 @@
+zoom moin fort lors de la selection du departement car rayon de 100km .... 
+ajout infos de contact dans la card de selection du tournoi dans la map
+

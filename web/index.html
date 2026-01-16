@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Padel Finder – Tournois France</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Flatpickr CSS (Dark Theme) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://npmcdn.com/flatpickr/dist/l10n/fr.js"></script>
+</head>
+
+<body>
+  <div class="app">
+    <header class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="logo">
+          <span class="logo-icon">🎾</span>
+          <h1>Padel<span class="accent">Finder</span></h1>
+        </div>
+        <p class="tagline">Trouve ton prochain tournoi en France 🇫🇷</p>
+      </div>
+    </header>
+
+    <!-- New Layout: Sidebar + Content -->
+    <div class="layout-container">
+      <!-- Left Sidebar: Filters -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h2>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+            </svg>
+            Filtres
+          </h2>
+        </div>
+
+        <!-- Location Section -->
+        <div class="filter-section">
+          <h3 class="section-label">Localisation</h3>
+          <div class="filter-group">
+            <label for="loc-name">Ville</label>
+            <input id="loc-name" type="text" placeholder="Paris, Nice..." autocomplete="off" />
+            <input id="loc-lat" type="hidden" />
+            <input id="loc-lng" type="hidden" />
+          </div>
+          <div class="filter-group">
+            <label for="radius">Rayon</label>
+            <div class="input-suffix">
+              <input id="radius" type="number" min="1" value="100" />
+              <span>km</span>
+            </div>
+          </div>
+          <button id="search-remote" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+            Rechercher
+          </button>
+        </div>
+
+        <!-- Period Section -->
+        <div class="filter-section">
+          <h3 class="section-label">Période</h3>
+          <div class="filter-group">
+            <label for="start-date">Du</label>
+            <input id="start-date" type="date" />
+          </div>
+          <div class="filter-group">
+            <label for="end-date">Au</label>
+            <input id="end-date" type="date" />
+          </div>
+        </div>
+
+        <!-- Criteria Section -->
+        <div class="filter-section">
+          <h3 class="section-label">Critères</h3>
+          <div class="filter-group">
+            <label for="level">Niveau</label>
+            <select id="level">
+              <option value="">Tous niveaux</option>
+              <option value="P25">P25</option>
+              <option value="P100">P100</option>
+              <option value="P250">P250</option>
+              <option value="P500">P500</option>
+              <option value="P1000">P1000</option>
+              <option value="P1500">P1500</option>
+              <option value="P2000">P2000</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="etype">Type d'épreuve</label>
+            <select id="etype">
+              <option value="">Toutes épreuves</option>
+              <option value="DM">Double Messieurs</option>
+              <option value="DD">Double Dames</option>
+              <option value="DX">Double Mixte</option>
+              <option value="SM">Simple Messieurs</option>
+              <option value="SD">Simple Dames</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="max-distance">Distance max</label>
+            <div class="input-suffix">
+              <input id="max-distance" type="number" min="0" placeholder="∞" />
+              <span>km</span>
+            </div>
+          </div>
+          <div class="filter-group">
+            <label for="search">Recherche</label>
+            <input id="search" type="text" placeholder="Club, ville..." />
+          </div>
+          <div class="filter-group">
+            <label for="sort">Trier par</label>
+            <select id="sort">
+              <option value="date">Date</option>
+              <option value="distance">Distance</option>
+              <option value="libelle">Nom</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="reset" class="btn-reset">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+            <path d="M3 3v5h5" />
+          </svg>
+          Réinitialiser
+        </button>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="content-main">
+        <!-- Map Section -->
+        <section class="map-section">
+          <div class="section-header">
+            <h2>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
+                <line x1="8" y1="2" x2="8" y2="18" />
+                <line x1="16" y1="6" x2="16" y2="22" />
+              </svg>
+              Carte interactive
+            </h2>
+            <div id="summary-text" class="summary">Entrez une ville pour commencer</div>
+          </div>
+          <div id="map-container" class="map-container">
+            <div class="map-container-wrapper">
+              <div id="map" class="map-view"></div>
+              <div id="map-loader" class="map-loader">
+                <div class="loader-content">
+                  <div class="loader-ball"></div>
+                  <p>Recherche des tournois...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-section">
+          <div class="section-header">
+            <h2>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="20" x2="12" y2="10" />
+                <line x1="18" y1="20" x2="18" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="16" />
+              </svg>
+              Chronologie
+            </h2>
+          </div>
+          <div id="timeline-container" class="timeline-container">
+            <!-- Driven by JS -->
+            <div class="timeline-track">
+              <div class="timeline-line"></div>
+              <div class="timeline-arrow"></div>
+              <div id="timeline-markers" class="timeline-markers"></div>
+            </div>
+            <div class="timeline-labels">
+              <span id="timeline-start-label"></span>
+              <span id="timeline-end-label"></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section">
+          <div class="results-header">
+            <h2>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="8" y1="6" x2="21" y2="6" />
+                <line x1="8" y1="12" x2="21" y2="12" />
+                <line x1="8" y1="18" x2="21" y2="18" />
+                <line x1="3" y1="6" x2="3.01" y2="6" />
+                <line x1="3" y1="12" x2="3.01" y2="12" />
+                <line x1="3" y1="18" x2="3.01" y2="18" />
+              </svg>
+              Résultats
+            </h2>
+            <div class="results-count" id="results-count"></div>
+          </div>
+          <div id="results" class="results-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <p>Données TenUp FFT • Projet Open Source</p>
+    </footer>
+  </div>
+
+  <template id="card-template">
+    <article class="tournament-card">
+      <div class="card-accent"></div>
+
+      <!-- Header -->
+      <header class="card-header">
+        <div class="card-title-row">
+          <h2 class="card-title"></h2>
+          <span class="card-badge"></span>
+        </div>
+        <div class="card-meta-row">
+          <span class="card-date">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            <span class="date-text"></span>
+          </span>
+          <span class="card-distance">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4l2 2" />
+            </svg>
+            <span class="distance-text"></span>
+          </span>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-inscription"></span>
+          <span class="tag tag-paiement"></span>
+        </div>
+      </header>
+
+      <!-- Body -->
+      <div class="card-body">
+        <!-- Club & Lieu -->
+        <div class="card-section">
+          <div class="info-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4" />
+            </svg>
+            <span class="club-name"></span>
+          </div>
+          <div class="info-row address-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <div class="address-block">
+              <span class="address-line"></span>
+              <span class="city-line"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Détails tournoi -->
+        <div class="card-section card-details">
+          <div class="detail-row">
+            <span class="detail-label">Catégorie</span>
+            <span class="detail-value category-text"></span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Juge-arbitre</span>
+            <span class="detail-value arbitre-text"></span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Surface</span>
+            <span class="detail-value surface-text"></span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Prix lots</span>
+            <span class="detail-value prix-lots"></span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Ouverture inscr.</span>
+            <span class="detail-value date-ouverture"></span>
+          </div>
+        </div>
+
+        <!-- Épreuves -->
+        <div class="card-section card-epreuves">
+          <div class="section-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z" />
+              <path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
+              <path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z" />
+              <path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z" />
+              <path
+                d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z" />
+              <path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z" />
+              <path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z" />
+              <path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z" />
+            </svg>
+            Épreuves
+          </div>
+          <div class="epreuves-list"></div>
+        </div>
+      </div>
+
+      <!-- Footer Contact -->
+      <footer class="card-footer">
+        <div class="contact-row">
+          <a class="contact-link contact-email" href="#">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            <span class="email-text"></span>
+          </a>
+          <a class="contact-link contact-phone" href="#">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span class="phone-text"></span>
+          </a>
+        </div>
+        <div class="footer-meta">
+          <span class="meta-code"></span>
+        </div>
+      </footer>
+    </article>
+  </template>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

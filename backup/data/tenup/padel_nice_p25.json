@@ -1,0 +1,740 @@
+{
+  "meta": {
+    "source": "https://tenup.fft.fr/recherche/tournois",
+    "params": {
+      "ville": "Nice, 06100",
+      "rayon_km": 100,
+      "pratique": "PADEL",
+      "date_start": "15/01/26",
+      "date_end": "15/04/26",
+      "categories": ["P25"]
+    },
+    "count": 15
+  },
+  "items": [
+    {
+      "id": "82594351",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662068010050",
+      "libelle": "GREENPOINT - P25",
+      "codeClub": "62068010",
+      "nomClub": "GREENPOINT",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-24T09:54:33Z",
+      "dateFin": "2026-01-24T09:54:33Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "FIGLIUZZI",
+        "adresse1": "Les Floralies",
+        "adresse2": "512 Boulevard Edouard VII",
+        "codePostal": "06310",
+        "ville": "BEAULIEU SUR MER",
+        "courriel": "thomaas-668@hotmail.fr"
+      },
+      "installation": {
+        "nom": "GREENPOINT",
+        "adresse2": "52 ROUTE DE SAINT ANTOINE",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telephone": "0762174691",
+        "lat": 43.694405,
+        "lng": 7.2356
+      },
+      "jugeArbitre": {
+        "nom": null,
+        "prenom": null
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "GREENPOINT - P25",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "2,6 km",
+      "originalId": "FED_82594351"
+    },
+    {
+      "id": "82594353",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662068010052",
+      "libelle": "GREENPOINT - P25",
+      "codeClub": "62068010",
+      "nomClub": "GREENPOINT",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-31T09:54:33Z",
+      "dateFin": "2026-01-31T09:54:33Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "FIGLIUZZI",
+        "adresse1": "Les Floralies",
+        "adresse2": "512 Boulevard Edouard VII",
+        "codePostal": "06310",
+        "ville": "BEAULIEU SUR MER",
+        "courriel": "thomaas-668@hotmail.fr"
+      },
+      "installation": {
+        "nom": "GREENPOINT",
+        "adresse2": "52 ROUTE DE SAINT ANTOINE",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telephone": "0762174691",
+        "lat": 43.694405,
+        "lng": 7.2356
+      },
+      "jugeArbitre": {
+        "nom": "null",
+        "prenom": "null"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "GREENPOINT - P25",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "2,6 km",
+      "originalId": "FED_82594353"
+    },
+    {
+      "id": "82594350",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662068010049",
+      "libelle": "GREENPOINT - P25",
+      "codeClub": "62068010",
+      "nomClub": "GREENPOINT",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-17T09:54:33Z",
+      "dateFin": "2026-01-17T09:54:33Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "FIGLIUZZI",
+        "adresse1": "Les Floralies",
+        "adresse2": "512 Boulevard Edouard VII",
+        "codePostal": "06310",
+        "ville": "BEAULIEU SUR MER",
+        "courriel": "thomaas-668@hotmail.fr"
+      },
+      "installation": {
+        "nom": "GREENPOINT",
+        "adresse2": "52 ROUTE DE SAINT ANTOINE",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telephone": "0762174691",
+        "lat": 43.694405,
+        "lng": 7.2356
+      },
+      "jugeArbitre": {
+        "nom": "null",
+        "prenom": "null"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "GREENPOINT - P25",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "2,6 km",
+      "originalId": "FED_82594350"
+    },
+    {
+      "id": "82595182",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662068005016",
+      "libelle": "P100+P25",
+      "codeClub": "62068005",
+      "nomClub": "V.INDOMITUS PADEL",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-24T09:54:33Z",
+      "dateFin": "2026-01-25T09:54:33Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "AUREGLIA-CAUNEILLE",
+        "adresse1": "100 Chemin De Camp Bollin",
+        "codePostal": "06340",
+        "ville": "06340",
+        "courriel": "olivierac@me.com"
+      },
+      "installation": {
+        "nom": "V.INDOMITUS PADEL",
+        "adresse2": "51 BOULEVARD FUON SANTA",
+        "codePostal": "06340",
+        "ville": "La Trinité ",
+        "telephone": "0489224689",
+        "lat": 43.74014,
+        "lng": 7.32437
+      },
+      "jugeArbitre": {
+        "id": 110312485,
+        "nom": "AUREGLIA-CAUNEILLE",
+        "prenom": "Olivier"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "P100+P25",
+          "typeEpreuve": "P100"
+        },
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DX",
+          "libelle": "P100+P25",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "6,2 km",
+      "international": false,
+      "originalId": "FED_82595182"
+    },
+    {
+      "id": "82553523",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662060195012",
+      "libelle": "P25 Messieurs Montaleigne",
+      "codeClub": "62060195",
+      "nomClub": "AGASC TC MONTALEIGNE",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-17T09:54:33Z",
+      "dateFin": "2026-01-17T09:54:33Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "DORNIC",
+        "adresse1": "53 avenue Reine Victoria",
+        "codePostal": "06000",
+        "ville": "NICE",
+        "courriel": "padelmontaleigne@gmail.com"
+      },
+      "installation": {
+        "nom": "06800 CAGNES SUR MER",
+        "adresse1": "1 Chemin de l'Estelle",
+        "codePostal": "06800",
+        "ville": "CAGNES SUR MER",
+        "telephone": "0493317089",
+        "lat": 43.69302,
+        "lng": 7.17519
+      },
+      "jugeArbitre": {
+        "nom": "null",
+        "prenom": "null"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "P25 Messieurs Montaleigne",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "7,4 km",
+      "international": false,
+      "originalId": "FED_82553523"
+    },
+    {
+      "id": "82596213",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662060195022",
+      "libelle": "P25 Messieurs Montaleigne",
+      "codeClub": "62060195",
+      "nomClub": "AGASC TC MONTALEIGNE",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-29T09:54:33Z",
+      "dateFin": "2026-01-29T09:54:33Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "DEJARDIN",
+        "adresse1": "31 allée des jacinthes",
+        "codePostal": "06800",
+        "ville": "CAGNES SUR MER",
+        "courriel": "delphinedejardinlf@gmail.com"
+      },
+      "installation": {
+        "nom": "06800 CAGNES SUR MER",
+        "adresse1": "1 Chemin de l'Estelle",
+        "codePostal": "06800",
+        "ville": "CAGNES SUR MER",
+        "telephone": "0493317089",
+        "lat": 43.69302,
+        "lng": 7.17519
+      },
+      "jugeArbitre": {
+        "id": 110440758,
+        "nom": "DEJARDIN",
+        "prenom": "Delphine"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "P25 Messieurs Montaleigne",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "7,4 km",
+      "international": false,
+      "originalId": "FED_82596213"
+    },
+    {
+      "id": "82594137",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662060372012",
+      "libelle": "TC EZE - P 25 H",
+      "codeClub": "62060372",
+      "nomClub": "TC EZE",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-20T09:54:33Z",
+      "dateFin": "2026-01-20T09:54:33Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "borfiga",
+        "adresse1": "861",
+        "adresse2": "861 Bd du Maréchal Leclerc",
+        "codePostal": "06360",
+        "ville": "EZE",
+        "courriel": "michel.borfiga@gmail.com"
+      },
+      "installation": {
+        "nom": "06360_EZE",
+        "adresse1": "Quartier de l'Aighetta",
+        "adresse2": "861 Bd du Maréchal Leclerc",
+        "codePostal": "06360",
+        "ville": "EZE",
+        "telephone": "0493411691",
+        "lat": 43.73364,
+        "lng": 7.353052
+      },
+      "jugeArbitre": {
+        "id": 924846,
+        "nom": "COLLANGE",
+        "prenom": "Christian"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "TC EZE - P 25 H",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "7,8 km",
+      "international": false,
+      "originalId": "FED_82594137"
+    },
+    {
+      "id": "82554045",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662060315017",
+      "libelle": "P25 FEMMES",
+      "codeClub": "62060315",
+      "nomClub": "TC ACACIAS",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-02-07T09:54:33Z",
+      "dateFin": "2026-02-07T09:54:33Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "TENNIS CLUB",
+        "adresse1": "Chemin du Vallon des Vaux",
+        "codePostal": "06800",
+        "ville": "CAGNES SUR MER",
+        "courriel": "tennisclubacacias@gmail.com"
+      },
+      "installation": {
+        "nom": "06800_CAGNES SUR MER",
+        "adresse1": "Chemin du Vallon des Vaux",
+        "codePostal": "06800",
+        "ville": "CAGNES SUR MER",
+        "telephone": "0493077784",
+        "lat": 43.696804,
+        "lng": 7.158551
+      },
+      "jugeArbitre": {
+        "id": 89628048,
+        "nom": "RAGNI",
+        "prenom": "Michaela"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DD",
+          "libelle": "P25 FEMMES",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "8,7 km",
+      "international": false,
+      "originalId": "FED_82554045"
+    },
+    {
+      "id": "82552545",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662060107052",
+      "libelle": "US CAGNES PADEL - P25 DAMES APRES MIDI",
+      "codeClub": "62060107",
+      "nomClub": "US CAGNES TENNIS",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-17T09:54:33Z",
+      "dateFin": "2026-01-17T09:54:33Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "US CAGNES TENNIS",
+        "adresse1": "Parc des Sports Pierre Sauvaigo",
+        "adresse2": "793 avenue colonel JeanPierre",
+        "codePostal": "06800",
+        "ville": "CAGNES SUR MER",
+        "telBureau": "0632288922",
+        "courriel": "cagnes@sports-ultra.com"
+      },
+      "installation": {
+        "nom": "US CAGNES TENNIS",
+        "adresse1": "Parc des Sports Pierre Sauvaigo",
+        "adresse2": "793 avenue colonel JeanPierre",
+        "codePostal": "06800",
+        "ville": "CAGNES SUR MER",
+        "telephone": "0493730252",
+        "lat": 43.67284,
+        "lng": 7.149736
+      },
+      "jugeArbitre": {
+        "id": 107794719,
+        "nom": "BAJARD",
+        "prenom": "Hugo"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DD",
+          "libelle": "US CAGNES PADEL - P25 DAMES APRES MIDI",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "9,9 km",
+      "international": false,
+      "originalId": "FED_82552545"
+    },
+    {
+      "id": "82552548",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662060107053",
+      "libelle": "US CAGNES PADEL - P25 NOCTURNE",
+      "codeClub": "62060107",
+      "nomClub": "US CAGNES TENNIS",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-19T09:54:33Z",
+      "dateFin": "2026-01-19T09:54:33Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "US CAGNES TENNIS",
+        "adresse1": "Parc des Sports Pierre Sauvaigo",
+        "adresse2": "793 avenue colonel JeanPierre",
+        "codePostal": "06800",
+        "ville": "CAGNES SUR MER",
+        "telBureau": "0632288922",
+        "courriel": "cagnes@sports-ultra.com"
+      },
+      "installation": {
+        "nom": "US CAGNES TENNIS",
+        "adresse1": "Parc des Sports Pierre Sauvaigo",
+        "adresse2": "793 avenue colonel JeanPierre",
+        "codePostal": "06800",
+        "ville": "CAGNES SUR MER",
+        "telephone": "0493730252",
+        "lat": 43.67284,
+        "lng": 7.149736
+      },
+      "jugeArbitre": {
+        "id": 107794719,
+        "nom": "BAJARD",
+        "prenom": "Hugo"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "US CAGNES PADEL - P25 NOCTURNE",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "9,9 km",
+      "international": false,
+      "originalId": "FED_82552548"
+    },
+    {
+      "id": "82552552",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662060107056",
+      "libelle": "US CAGNES PADEL - P25 NOCTURNE",
+      "codeClub": "62060107",
+      "nomClub": "US CAGNES TENNIS",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-26T09:54:33Z",
+      "dateFin": "2026-01-26T09:54:33Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "US CAGNES TENNIS",
+        "adresse1": "Parc des Sports Pierre Sauvaigo",
+        "adresse2": "793 avenue colonel JeanPierre",
+        "codePostal": "06800",
+        "ville": "CAGNES SUR MER",
+        "telBureau": "0632288922",
+        "courriel": "cagnes@sports-ultra.com"
+      },
+      "installation": {
+        "nom": "US CAGNES TENNIS",
+        "adresse1": "Parc des Sports Pierre Sauvaigo",
+        "adresse2": "793 avenue colonel JeanPierre",
+        "codePostal": "06800",
+        "ville": "CAGNES SUR MER",
+        "telephone": "0493730252",
+        "lat": 43.67284,
+        "lng": 7.149736
+      },
+      "jugeArbitre": {
+        "id": 107794719,
+        "nom": "BAJARD",
+        "prenom": "Hugo"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "US CAGNES PADEL - P25 NOCTURNE",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "9,9 km",
+      "international": false,
+      "originalId": "FED_82552552"
+    },
+    {
+      "id": "82552554",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662060107058",
+      "libelle": "US CAGNES PADEL - P25 MIXTE APRES MIDI",
+      "codeClub": "62060107",
+      "nomClub": "US CAGNES TENNIS",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-31T09:54:33Z",
+      "dateFin": "2026-01-31T09:54:33Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "US CAGNES TENNIS",
+        "adresse1": "Parc des Sports Pierre Sauvaigo",
+        "adresse2": "793 avenue colonel JeanPierre",
+        "codePostal": "06800",
+        "ville": "CAGNES SUR MER",
+        "telBureau": "0632288922",
+        "courriel": "cagnes@sports-ultra.com"
+      },
+      "installation": {
+        "nom": "US CAGNES TENNIS",
+        "adresse1": "Parc des Sports Pierre Sauvaigo",
+        "adresse2": "793 avenue colonel JeanPierre",
+        "codePostal": "06800",
+        "ville": "CAGNES SUR MER",
+        "telephone": "0493730252",
+        "lat": 43.67284,
+        "lng": 7.149736
+      },
+      "jugeArbitre": {
+        "id": 107794719,
+        "nom": "BAJARD",
+        "prenom": "Hugo"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DX",
+          "libelle": "US CAGNES PADEL - P25 MIXTE APRES MIDI",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "9,9 km",
+      "international": false,
+      "originalId": "FED_82552554"
+    },
+    {
+      "id": "82560592",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662060107060",
+      "libelle": "US CAGNES PADEL - P25 NOCTURNE",
+      "codeClub": "62060107",
+      "nomClub": "US CAGNES TENNIS",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-02-02T09:54:33Z",
+      "dateFin": "2026-02-02T09:54:33Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "BAJARD",
+        "adresse1": "19 rue du Planastel",
+        "codePostal": "06200",
+        "ville": "Nice",
+        "courriel": "cagnes@sports-ultra.com"
+      },
+      "installation": {
+        "nom": "US CAGNES TENNIS",
+        "adresse1": "Parc des Sports Pierre Sauvaigo",
+        "adresse2": "793 avenue colonel JeanPierre",
+        "codePostal": "06800",
+        "ville": "CAGNES SUR MER",
+        "telephone": "0493730252",
+        "lat": 43.67284,
+        "lng": 7.149736
+      },
+      "jugeArbitre": {
+        "id": 107794719,
+        "nom": "BAJARD",
+        "prenom": "Hugo"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "US CAGNES PADEL - P25 NOCTURNE",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "9,9 km",
+      "international": false,
+      "originalId": "FED_82560592"
+    },
+    {
+      "id": "82575230",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662060460032",
+      "libelle": "P25 Nocturne",
+      "codeClub": "62060460",
+      "nomClub": "DYNAMIC'SPORT",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-20T09:54:33Z",
+      "dateFin": "2026-01-20T09:54:33Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "OULIE",
+        "adresse1": "228 route de bellet",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "courriel": "julien.oulier@gmail.com"
+      },
+      "installation": {
+        "nom": "Dynamic'Sport",
+        "adresse1": "Espace Bocarel",
+        "adresse2": "191 Allée Thierry Combe",
+        "codePostal": "06690",
+        "ville": "Tourrettes-Levens",
+        "telephone": "0422138427",
+        "lat": 43.80081,
+        "lng": 7.27126
+      },
+      "jugeArbitre": {
+        "id": 105799773,
+        "nom": "OULIE",
+        "prenom": "Julien"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "P25 Nocturne",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "10,9 km",
+      "international": false,
+      "originalId": "FED_82575230"
+    },
+    {
+      "id": "82575232",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662060460033",
+      "libelle": "P25 Noturne",
+      "codeClub": "62060460",
+      "nomClub": "DYNAMIC'SPORT",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-27T09:54:33Z",
+      "dateFin": "2026-01-27T09:54:33Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "OULIE",
+        "adresse1": "228 route de bellet",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "courriel": "julien.oulier@gmail.com"
+      },
+      "installation": {
+        "nom": "Dynamic'Sport",
+        "adresse1": "Espace Bocarel",
+        "adresse2": "191 Allée Thierry Combe",
+        "codePostal": "06690",
+        "ville": "Tourrettes-Levens",
+        "telephone": "0422138427",
+        "lat": 43.80081,
+        "lng": 7.27126
+      },
+      "jugeArbitre": {
+        "id": 105799773,
+        "nom": "OULIE",
+        "prenom": "Julien"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "P25 Noturne",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "10,9 km",
+      "international": false,
+      "originalId": "FED_82575232"
+    }
+  ]
+}

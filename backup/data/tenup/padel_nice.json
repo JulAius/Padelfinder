@@ -1,0 +1,623 @@
+{
+  "meta": {
+    "source": "https://tenup.fft.fr/recherche/tournois",
+    "params": {
+      "ville": "Nice, 06100",
+      "rayon_km": 100,
+      "pratique": "PADEL",
+      "date_start": "15/01/26",
+      "date_end": "15/04/26",
+      "categories": ["P25", "P100", "P250", "P500", "P1000", "P1500", "P2000"]
+    },
+    "count": 16
+  },
+  "items": [
+    {
+      "id": "82572104",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662068010018",
+      "libelle": "GREENPOINT - P250",
+      "codeClub": "62068010",
+      "nomClub": "GREENPOINT",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-22T09:45:37Z",
+      "dateFin": "2026-01-22T09:45:37Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "BALLOCCHI",
+        "adresse1": "23 rue monseigneur Alfred daumas",
+        "adresse2": "23 rue monseigneur Alfred Daumas",
+        "codePostal": "06300",
+        "ville": "NICE",
+        "courriel": "ballocchi.e@hotmail.fr"
+      },
+      "installation": {
+        "nom": "GREENPOINT",
+        "adresse2": "52 ROUTE DE SAINT ANTOINE",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telephone": "0762174691",
+        "lat": 43.694405,
+        "lng": 7.2356
+      },
+      "jugeArbitre": {
+        "id": 109325382,
+        "nom": "BALLOCCHI",
+        "prenom": "Emilie"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "GREENPOINT - P250",
+          "typeEpreuve": "P250"
+        }
+      ],
+      "distanceEnMetres": "2,6 km",
+      "originalId": "FED_82572104"
+    },
+    {
+      "id": "82572107",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662068010020",
+      "libelle": "GREENPOINT - P250",
+      "codeClub": "62068010",
+      "nomClub": "GREENPOINT",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-02-26T09:45:37Z",
+      "dateFin": "2026-02-26T09:45:37Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "BALLOCCHI",
+        "adresse1": "23 rue monseigneur Alfred daumas",
+        "adresse2": "23 rue monseigneur Alfred Daumas",
+        "codePostal": "06300",
+        "ville": "NICE",
+        "courriel": "ballocchi.e@hotmail.fr"
+      },
+      "installation": {
+        "nom": "GREENPOINT",
+        "adresse2": "52 ROUTE DE SAINT ANTOINE",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telephone": "0762174691",
+        "lat": 43.694405,
+        "lng": 7.2356
+      },
+      "jugeArbitre": {
+        "id": 109325382,
+        "nom": "BALLOCCHI",
+        "prenom": "Emilie"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "GREENPOINT - P250",
+          "typeEpreuve": "P250"
+        }
+      ],
+      "distanceEnMetres": "2,6 km",
+      "originalId": "FED_82572107"
+    },
+    {
+      "id": "82572108",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662068010021",
+      "libelle": "GREENPOINT - P250",
+      "codeClub": "62068010",
+      "nomClub": "GREENPOINT",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-03-12T09:45:37Z",
+      "dateFin": "2026-03-12T09:45:37Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "BALLOCCHI",
+        "adresse1": "23 rue monseigneur Alfred daumas",
+        "adresse2": "23 rue monseigneur Alfred Daumas",
+        "codePostal": "06300",
+        "ville": "NICE",
+        "courriel": "ballocchi.e@hotmail.fr"
+      },
+      "installation": {
+        "nom": "GREENPOINT",
+        "adresse2": "52 ROUTE DE SAINT ANTOINE",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telephone": "0762174691",
+        "lat": 43.694405,
+        "lng": 7.2356
+      },
+      "jugeArbitre": {
+        "id": 109325382,
+        "nom": "BALLOCCHI",
+        "prenom": "Emilie"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "GREENPOINT - P250",
+          "typeEpreuve": "P250"
+        }
+      ],
+      "distanceEnMetres": "2,6 km",
+      "originalId": "FED_82572108"
+    },
+    {
+      "id": "82572110",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662068010023",
+      "libelle": "GREENPOINT - P250",
+      "codeClub": "62068010",
+      "nomClub": "GREENPOINT",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-04-09T09:45:37Z",
+      "dateFin": "2026-04-09T09:45:37Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "BALLOCCHI",
+        "adresse1": "23 rue monseigneur Alfred daumas",
+        "adresse2": "23 rue monseigneur Alfred Daumas",
+        "codePostal": "06300",
+        "ville": "NICE",
+        "courriel": "ballocchi.e@hotmail.fr"
+      },
+      "installation": {
+        "nom": "GREENPOINT",
+        "adresse2": "52 ROUTE DE SAINT ANTOINE",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telephone": "0762174691",
+        "lat": 43.694405,
+        "lng": 7.2356
+      },
+      "jugeArbitre": {
+        "id": 109325382,
+        "nom": "BALLOCCHI",
+        "prenom": "Emilie"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "GREENPOINT - P250",
+          "typeEpreuve": "P250"
+        }
+      ],
+      "distanceEnMetres": "2,6 km",
+      "originalId": "FED_82572110"
+    },
+    {
+      "id": "82594351",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662068010050",
+      "libelle": "GREENPOINT - P25",
+      "codeClub": "62068010",
+      "nomClub": "GREENPOINT",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-24T09:45:37Z",
+      "dateFin": "2026-01-24T09:45:37Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "FIGLIUZZI",
+        "adresse1": "Les Floralies",
+        "adresse2": "512 Boulevard Edouard VII",
+        "codePostal": "06310",
+        "ville": "BEAULIEU SUR MER",
+        "courriel": "thomaas-668@hotmail.fr"
+      },
+      "installation": {
+        "nom": "GREENPOINT",
+        "adresse2": "52 ROUTE DE SAINT ANTOINE",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telephone": "0762174691",
+        "lat": 43.694405,
+        "lng": 7.2356
+      },
+      "jugeArbitre": {
+        "nom": null,
+        "prenom": null
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "GREENPOINT - P25",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "2,6 km",
+      "originalId": "FED_82594351"
+    },
+    {
+      "id": "82594352",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662068010051",
+      "libelle": "GREENPOINT - P100",
+      "codeClub": "62068010",
+      "nomClub": "GREENPOINT",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-29T09:45:37Z",
+      "dateFin": "2026-01-29T09:45:37Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "MAZARDO",
+        "adresse2": "52 ROUTE DE SAINT ANTOINE",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telBureau": "0762174691",
+        "courriel": "contact@greenpoint-sport.com"
+      },
+      "installation": {
+        "nom": "GREENPOINT",
+        "adresse2": "52 ROUTE DE SAINT ANTOINE",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telephone": "0762174691",
+        "lat": 43.694405,
+        "lng": 7.2356
+      },
+      "jugeArbitre": {
+        "nom": null,
+        "prenom": null
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "GREENPOINT - P100",
+          "typeEpreuve": "P100"
+        }
+      ],
+      "distanceEnMetres": "2,6 km",
+      "originalId": "FED_82594352"
+    },
+    {
+      "id": "82572106",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662068010019",
+      "libelle": "GREENPOINT - P250",
+      "codeClub": "62068010",
+      "nomClub": "GREENPOINT",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-02-05T09:45:37Z",
+      "dateFin": "2026-02-05T09:45:37Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "BALLOCCHI",
+        "adresse1": "23 rue monseigneur Alfred daumas",
+        "adresse2": "23 rue monseigneur Alfred Daumas",
+        "codePostal": "06300",
+        "ville": "NICE",
+        "courriel": "ballocchi.e@hotmail.fr"
+      },
+      "installation": {
+        "nom": "GREENPOINT",
+        "adresse2": "52 ROUTE DE SAINT ANTOINE",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telephone": "0762174691",
+        "lat": 43.694405,
+        "lng": 7.2356
+      },
+      "jugeArbitre": {
+        "id": 109325382,
+        "nom": "BALLOCCHI",
+        "prenom": "Emilie"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "GREENPOINT - P250",
+          "typeEpreuve": "P250"
+        }
+      ],
+      "distanceEnMetres": "2,6 km",
+      "originalId": "FED_82572106"
+    },
+    {
+      "id": "82594350",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662068010049",
+      "libelle": "GREENPOINT - P25",
+      "codeClub": "62068010",
+      "nomClub": "GREENPOINT",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-17T09:45:37Z",
+      "dateFin": "2026-01-17T09:45:37Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "FIGLIUZZI",
+        "adresse1": "Les Floralies",
+        "adresse2": "512 Boulevard Edouard VII",
+        "codePostal": "06310",
+        "ville": "BEAULIEU SUR MER",
+        "courriel": "thomaas-668@hotmail.fr"
+      },
+      "installation": {
+        "nom": "GREENPOINT",
+        "adresse2": "52 ROUTE DE SAINT ANTOINE",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telephone": "0762174691",
+        "lat": 43.694405,
+        "lng": 7.2356
+      },
+      "jugeArbitre": {
+        "nom": null,
+        "prenom": null
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "GREENPOINT - P25",
+          "typeEpreuve": "P25"
+        }
+      ],
+      "distanceEnMetres": "2,6 km",
+      "originalId": "FED_82594350"
+    },
+    {
+      "id": "82560545",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662060456248",
+      "libelle": "ULTRA FABRON - P250",
+      "codeClub": "62060456",
+      "nomClub": "ULTRA COUNTRY CLUB",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-03-03T09:45:37Z",
+      "dateFin": "2026-03-03T09:45:37Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "ULTRA COUNTRY CLUB",
+        "adresse2": "19 AVENUE DE LA MARNE",
+        "codePostal": "06100",
+        "ville": "NICE",
+        "telBureau": "0652016299",
+        "courriel": "fabron@sports-ultra.com"
+      },
+      "installation": {
+        "nom": "Ultra Fabron",
+        "adresse2": "279 Avenue de Fabron",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telephone": "0785846256",
+        "lat": 43.69261,
+        "lng": 7.210557
+      },
+      "jugeArbitre": {
+        "id": 698457,
+        "nom": "GIOANNI",
+        "prenom": "Frederic"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "ULTRA FABRON - P250",
+          "typeEpreuve": "P250"
+        }
+      ],
+      "distanceEnMetres": "4,6 km",
+      "originalId": "FED_82560545"
+    },
+    {
+      "id": "82560548",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662060456250",
+      "libelle": "ULTRA FABRON - P250",
+      "codeClub": "62060456",
+      "nomClub": "ULTRA COUNTRY CLUB",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-03-17T09:45:37Z",
+      "dateFin": "2026-03-17T09:45:37Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "ULTRA COUNTRY CLUB",
+        "adresse2": "19 AVENUE DE LA MARNE",
+        "codePostal": "06100",
+        "ville": "NICE",
+        "telBureau": "0652016299",
+        "courriel": "fabron@sports-ultra.com"
+      },
+      "installation": {
+        "nom": "Ultra Fabron",
+        "adresse2": "279 Avenue de Fabron",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telephone": "0785846256",
+        "lat": 43.69261,
+        "lng": 7.210557
+      },
+      "jugeArbitre": {
+        "id": 698457,
+        "nom": "GIOANNI",
+        "prenom": "Frederic"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "ULTRA FABRON - P250",
+          "typeEpreuve": "P250"
+        }
+      ],
+      "distanceEnMetres": "4,6 km",
+      "originalId": "FED_82560548"
+    },
+    {
+      "id": "82560551",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662060456253",
+      "libelle": "ULTRA FABRON - P250",
+      "codeClub": "62060456",
+      "nomClub": "ULTRA COUNTRY CLUB",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-04-07T09:45:37Z",
+      "dateFin": "2026-04-07T09:45:37Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "ULTRA COUNTRY CLUB",
+        "adresse2": "19 AVENUE DE LA MARNE",
+        "codePostal": "06100",
+        "ville": "NICE",
+        "telBureau": "0652016299",
+        "courriel": "fabron@sports-ultra.com"
+      },
+      "installation": {
+        "nom": "Ultra Fabron",
+        "adresse2": "279 Avenue de Fabron",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telephone": "0785846256",
+        "lat": 43.69261,
+        "lng": 7.210557
+      },
+      "jugeArbitre": {
+        "id": 698457,
+        "nom": "GIOANNI",
+        "prenom": "Frederic"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "ULTRA FABRON - P250",
+          "typeEpreuve": "P250"
+        }
+      ],
+      "distanceEnMetres": "4,6 km",
+      "originalId": "FED_82560551"
+    },
+    {
+      "id": "82560541",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662060456245",
+      "libelle": "ULTRA FABRON - P100",
+      "codeClub": "62060456",
+      "nomClub": "ULTRA COUNTRY CLUB",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-02-10T09:45:37Z",
+      "dateFin": "2026-02-10T09:45:37Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "ULTRA COUNTRY CLUB",
+        "adresse2": "19 AVENUE DE LA MARNE",
+        "codePostal": "06100",
+        "ville": "NICE",
+        "telBureau": "0652016299",
+        "courriel": "fabron@sports-ultra.com"
+      },
+      "installation": {
+        "nom": "Ultra Fabron",
+        "adresse2": "279 Avenue de Fabron",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telephone": "0785846256",
+        "lat": 43.69261,
+        "lng": 7.210557
+      },
+      "jugeArbitre": {
+        "id": 96468690,
+        "nom": "CLASEN",
+        "prenom": "Gaelle"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "ULTRA FABRON - P100",
+          "typeEpreuve": "P100"
+        }
+      ],
+      "distanceEnMetres": "4,6 km",
+      "originalId": "FED_82560541"
+    },
+    {
+      "id": "82551490",
+      "type": "P",
+      "millesime": 2026,
+      "code": "202662060456020",
+      "libelle": "ULTRA FABRON - P100",
+      "codeClub": "62060456",
+      "nomClub": "ULTRA COUNTRY CLUB",
+      "codeComite": "6206",
+      "codeLigue": "62",
+      "dateDebut": "2026-01-27T09:45:37Z",
+      "dateFin": "2026-01-27T09:45:37Z",
+      "paiementEnLigne": false,
+      "inscriptionEnLigne": false,
+      "contact": {
+        "nomEngagement": "GUERIN-PISSARRO",
+        "adresse1": "265 Chemin du Castellet",
+        "codePostal": "06650",
+        "ville": "Le Rouret",
+        "courriel": "matisgp19@gmail.com"
+      },
+      "installation": {
+        "nom": "Ultra Fabron",
+        "adresse2": "279 Avenue de Fabron",
+        "codePostal": "06200",
+        "ville": "NICE",
+        "telephone": "0785846256",
+        "lat": 43.69261,
+        "lng": 7.210557
+      },
+      "jugeArbitre": {
+        "id": 108438453,
+        "nom": "GUERIN-PISSARRO",
+        "prenom": "MATIS"
+      },
+      "epreuves": [
+        {
+          "categorieAge": "Senior",
+          "natureEpreuve": "DM",
+          "libelle": "ULTRA FABRON - P100",
+          "typeEpreuve": "P100"
+        }
+      ],
+      "distanceEnMetres": "4,6 km",
+      "originalId": "FED_82551490"
+    }
+  ]
+}

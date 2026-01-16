@@ -1,0 +1,6 @@
+{
+  "erreur": {
+    "messages": "RESTEASY003210: Could not find resource for full path: http://internal-lb-fed-prod-priv-1936433813.eu-central-1.elb.amazonaws.com:9002/api/rest/v1/competition/tournois",
+    "messagesNonTechnique": []
+  }
+}
