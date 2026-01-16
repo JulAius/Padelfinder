@@ -71,22 +71,23 @@ app.add_middleware(
 
 
 def load_token_file():
-    # 1. Try environment variable (for Vercel)
+    # 1. Try local file (Highest priority - contains refreshed tokens)
+    if os.path.exists(TOKEN_PATH):
+        try:
+            with open(TOKEN_PATH, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+
+    # 2. Try environment variable
     env_token = os.environ.get("TENUP_TOKEN")
     if env_token:
         try:
             return json.loads(env_token)
         except Exception as e:
             print(f"Failed to parse TENUP_TOKEN: {e}")
-
-    # 2. Try local file
-    if not os.path.exists(TOKEN_PATH):
-        return None
-    try:
-        with open(TOKEN_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except Exception:
-        return None
+            
+    return None
 
 
 def load_cookie_header() -> Optional[str]:
@@ -522,7 +523,10 @@ async def _perform_search(lat, lng, rayon_km, q, date_start, date_end, level, et
                         limit=100,
                     )
                     return {"count": len(items), "items": items, "source": "mobile_api"}
-                except Exception:
+                except Exception as e:
+                    print(f"[Mobile] Refresh failed: {e}")
+                    import traceback
+                    traceback.print_exc()
                     pass
             # fall through to web if cookie available
         except Exception:
