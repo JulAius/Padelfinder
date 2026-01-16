@@ -1245,7 +1245,10 @@ function initMobileUI() {
 }
 
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', initMobileUI);
+document.addEventListener('DOMContentLoaded', () => {
+  initMobileUI();
+  render();
+});
 
 function showEmptyState() {
   const isInitial = rawItems.length === 0;

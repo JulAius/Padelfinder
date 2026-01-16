@@ -47,108 +47,112 @@
     <div class="layout-container">
       <!-- Left Sidebar: Filters -->
       <aside class="sidebar">
-        <div class="sidebar-header">
-          <h2>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
-            </svg>
-            Filtres
-          </h2>
-        </div>
-
-        <!-- Location Section -->
-        <div class="filter-section">
-          <h3 class="section-label">Localisation</h3>
-          <div class="filter-group">
-            <label for="loc-name">Ville</label>
-            <input id="loc-name" type="text" placeholder="Paris, Nice..." autocomplete="off" />
-            <input id="loc-lat" type="hidden" />
-            <input id="loc-lng" type="hidden" />
+        <aside class="sidebar">
+          <div class="sidebar-header">
+            <h2>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+              </svg>
+              Filtres
+            </h2>
           </div>
-          <div class="filter-group">
-            <label for="radius">Rayon</label>
-            <div class="input-suffix">
-              <input id="radius" type="number" min="1" value="100" />
-              <span>km</span>
+
+          <div class="sidebar-content">
+            <!-- Location Section -->
+            <div class="filter-section">
+              <h3 class="section-label">Localisation</h3>
+              <div class="filter-group">
+                <label for="loc-name">Ville</label>
+                <input id="loc-name" type="text" placeholder="Paris, Nice..." autocomplete="off" />
+                <input id="loc-lat" type="hidden" />
+                <input id="loc-lng" type="hidden" />
+              </div>
+              <div class="filter-group">
+                <label for="radius">Rayon</label>
+                <div class="input-suffix">
+                  <input id="radius" type="number" min="1" value="100" />
+                  <span>km</span>
+                </div>
+              </div>
+              <button id="search-remote" class="btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.35-4.35" />
+                </svg>
+                Rechercher
+              </button>
             </div>
-          </div>
-          <button id="search-remote" class="btn-primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8" />
-              <path d="m21 21-4.35-4.35" />
-            </svg>
-            Rechercher
-          </button>
-        </div>
 
-        <!-- Period Section -->
-        <div class="filter-section">
-          <h3 class="section-label">Période</h3>
-          <div class="filter-group">
-            <label for="start-date">Du</label>
-            <input id="start-date" type="date" />
-          </div>
-          <div class="filter-group">
-            <label for="end-date">Au</label>
-            <input id="end-date" type="date" />
-          </div>
-        </div>
-
-        <!-- Criteria Section -->
-        <div class="filter-section">
-          <h3 class="section-label">Critères</h3>
-          <div class="filter-group">
-            <label for="level">Niveau</label>
-            <select id="level">
-              <option value="">Tous niveaux</option>
-              <option value="P25">P25</option>
-              <option value="P100">P100</option>
-              <option value="P250">P250</option>
-              <option value="P500">P500</option>
-              <option value="P1000">P1000</option>
-              <option value="P1500">P1500</option>
-              <option value="P2000">P2000</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label for="etype">Type d'épreuve</label>
-            <select id="etype">
-              <option value="">Toutes épreuves</option>
-              <option value="DM">Double Messieurs</option>
-              <option value="DD">Double Dames</option>
-              <option value="DX">Double Mixte</option>
-              <option value="SM">Simple Messieurs</option>
-              <option value="SD">Simple Dames</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label for="max-distance">Distance max</label>
-            <div class="input-suffix">
-              <input id="max-distance" type="number" min="0" placeholder="∞" />
-              <span>km</span>
+            <!-- Period Section -->
+            <div class="filter-section">
+              <h3 class="section-label">Période</h3>
+              <div class="filter-group">
+                <label for="start-date">Du</label>
+                <input id="start-date" type="date" />
+              </div>
+              <div class="filter-group">
+                <label for="end-date">Au</label>
+                <input id="end-date" type="date" />
+              </div>
             </div>
-          </div>
-          <div class="filter-group">
-            <label for="search">Recherche</label>
-            <input id="search" type="text" placeholder="Club, ville..." />
-          </div>
-          <div class="filter-group">
-            <label for="sort">Trier par</label>
-            <select id="sort">
-              <option value="date">Date</option>
-              <option value="distance">Distance</option>
-              <option value="libelle">Nom</option>
-            </select>
-          </div>
-        </div>
 
-        <button id="reset" class="btn-reset">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-            <path d="M3 3v5h5" />
-          </svg>
-          Réinitialiser
-        </button>
+            <!-- Criteria Section -->
+            <div class="filter-section">
+              <h3 class="section-label">Critères</h3>
+              <div class="filter-group">
+                <label for="level">Niveau</label>
+                <select id="level">
+                  <option value="">Tous niveaux</option>
+                  <option value="P25">P25</option>
+                  <option value="P100">P100</option>
+                  <option value="P250">P250</option>
+                  <option value="P500">P500</option>
+                  <option value="P1000">P1000</option>
+                  <option value="P1500">P1500</option>
+                  <option value="P2000">P2000</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="etype">Type d'épreuve</label>
+                <select id="etype">
+                  <option value="">Toutes épreuves</option>
+                  <option value="DM">Double Messieurs</option>
+                  <option value="DD">Double Dames</option>
+                  <option value="DX">Double Mixte</option>
+                  <option value="SM">Simple Messieurs</option>
+                  <option value="SD">Simple Dames</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="max-distance">Distance max</label>
+                <div class="input-suffix">
+                  <input id="max-distance" type="number" min="0" placeholder="∞" />
+                  <span>km</span>
+                </div>
+              </div>
+              <div class="filter-group">
+                <label for="search">Recherche</label>
+                <input id="search" type="text" placeholder="Club, ville..." />
+              </div>
+              <div class="filter-group">
+                <label for="sort">Trier par</label>
+                <select id="sort">
+                  <option value="date">Date</option>
+                  <option value="distance">Distance</option>
+                  <option value="libelle">Nom</option>
+                </select>
+              </div>
+            </div>
+
+            <button id="reset" class="btn-reset">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                <path d="M3 3v5h5" />
+              </svg>
+              Réinitialiser
+            </button>
+          </div>
+        </aside>
       </aside>
 
       <!-- Main Content -->
