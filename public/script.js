@@ -3,6 +3,8 @@
  * Aggregates and displays French padel tournaments from TenUp
  */
 
+console.log("🎾 Padel Finder: Initializing scripts...");
+
 // ═══════════════════════════════════════════════════════════════════════════
 // DOM ELEMENTS
 // ═══════════════════════════════════════════════════════════════════════════
@@ -34,8 +36,8 @@ const mapLoader = document.getElementById("map-loader");
 // CONFIGURATION
 // ═══════════════════════════════════════════════════════════════════════════
 
-const API_BASE = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
-  ? "http://localhost:8001"
+const API_BASE = (window.location.port === "8000" || window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
+  ? `${window.location.protocol}//${window.location.hostname}:8001`
   : "";
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -147,7 +149,12 @@ async function geocodeCity(name) {
 
 // Initialize Leaflet map with quick search zones - FRANCE ONLY
 function initMap() {
-  if (map) return; // Already initialized
+  if (map) return;
+  if (typeof L === 'undefined') {
+    console.error("❌ Leaflet (L) is not defined. Map cannot be initialized.");
+    return;
+  }
+  console.log("🗺️ Padel Finder: Initializing map...");
 
   // France boundaries (approximate)
   const franceBounds = [
@@ -1246,6 +1253,7 @@ function initMobileUI() {
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+  console.log("🚀 Padel Finder: DOM Content Loaded");
   initMobileUI();
   render();
 });
