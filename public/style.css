@@ -2423,15 +2423,43 @@ button:active {
   margin-bottom: 2rem;
 }
 
-.results-header h2 {
-  font-size: 0.8125rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--text-primary);
+.results-header-actions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1.5rem;
+}
+
+.view-switcher-desktop {
+  display: flex;
+  background: var(--bg-elevated);
+  padding: 2px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.view-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+
+.view-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.view-btn.active {
+  background: var(--bg-secondary);
+  color: var(--accent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .results-count {

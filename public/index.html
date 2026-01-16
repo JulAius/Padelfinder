@@ -221,7 +221,28 @@
               </svg>
               Résultats
             </h2>
-            <div class="results-count" id="results-count"></div>
+            <div class="results-header-actions">
+              <div class="view- switcher-desktop">
+                <button id="view-list" class="view-btn active" title="Vue Liste">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="8" y1="6" x2="21" y2="6" />
+                    <line x1="8" y1="12" x2="21" y2="12" />
+                    <line x1="8" y1="18" x2="21" y2="18" />
+                    <line x1="3" y1="6" x2="3.01" y2="6" />
+                    <line x1="3" y1="12" x2="3.01" y2="12" />
+                    <line x1="3" y1="18" x2="3.01" y2="18" />
+                  </svg>
+                </button>
+                <button id="view-map" class="view-btn" title="Vue Carte">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
+                    <line x1="8" y1="2" x2="8" y2="18" />
+                    <line x1="16" y1="6" x2="16" y2="22" />
+                  </svg>
+                </button>
+              </div>
+              <div class="results-count" id="results-count"></div>
+            </div>
           </div>
           <div id="results" class="results-grid"></div>
         </section>

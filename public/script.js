@@ -526,10 +526,10 @@ function setView(view) {
 
   if (view === 'map') {
     // Show map, hide list
-    mapContainer.style.display = 'block';
-    resultsEl.style.display = 'none';
-    viewMapBtn.classList.add('active');
-    viewListBtn.classList.remove('active');
+    if (mapContainer) mapContainer.style.display = 'block';
+    if (resultsEl) resultsEl.style.display = 'none';
+    viewMapBtn?.classList.add('active');
+    viewListBtn?.classList.remove('active');
 
     // Initialize and update map
     if (!map) initMap();
@@ -540,21 +540,21 @@ function setView(view) {
     displayTournamentsOnMap(sorted);
 
     // If we have search coordinates, show circle
-    const lat = locLatInput.value;
-    const lng = locLngInput.value;
-    const radius = radiusInput.value || 100;
+    const lat = locLatInput?.value;
+    const lng = locLngInput?.value;
+    const radius = radiusInput?.value || 100;
     if (lat && lng) {
       updateSearchCircle(parseFloat(lat), parseFloat(lng), parseFloat(radius));
     }
 
     // Invalidate size after showing (fixes rendering issues)
-    setTimeout(() => map.invalidateSize(), 100);
+    if (map) setTimeout(() => map.invalidateSize(), 100);
   } else {
     // Show list, hide map
-    mapContainer.style.display = 'none';
-    resultsEl.style.display = 'grid';
-    viewListBtn.classList.add('active');
-    viewMapBtn.classList.remove('active');
+    if (mapContainer) mapContainer.style.display = 'none';
+    if (resultsEl) resultsEl.style.display = 'grid';
+    viewListBtn?.classList.add('active');
+    viewMapBtn?.classList.remove('active');
   }
 }
 
@@ -670,16 +670,16 @@ function render(forceCenter = null) {
   const sorted = sortItems(filtered);
 
   // Update summary
-  const userLat = locLatInput.value ? Number(locLatInput.value) : null;
-  const userLng = locLngInput.value ? Number(locLngInput.value) : null;
+  const userLat = locLatInput?.value ? Number(locLatInput.value) : null;
+  const userLng = locLngInput?.value ? Number(locLngInput.value) : null;
 
   if (rawItems.length === 0) {
-    summaryEl.textContent = "Entrez une ville pour commencer";
-    resultsCountEl.textContent = "";
+    if (summaryEl) summaryEl.textContent = "Entrez une ville pour commencer";
+    if (resultsCountEl) resultsCountEl.textContent = "";
   } else {
-    const centerInfo = userLat != null ? ` • Centre: ${locNameInput.value.split(",")[0]}` : "";
-    summaryEl.textContent = `${sorted.length} tournoi${sorted.length > 1 ? "s" : ""} trouvé${sorted.length > 1 ? "s" : ""}${centerInfo}`;
-    resultsCountEl.textContent = `${sorted.length} / ${rawItems.length}`;
+    const centerInfo = userLat != null ? ` • Centre: ${locNameInput?.value?.split(",")[0]}` : "";
+    if (summaryEl) summaryEl.textContent = `${sorted.length} tournoi${sorted.length > 1 ? "s" : ""} trouvé${sorted.length > 1 ? "s" : ""}${centerInfo}`;
+    if (resultsCountEl) resultsCountEl.textContent = `${sorted.length} / ${rawItems.length}`;
   }
 
   // Render cards
