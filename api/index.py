@@ -450,11 +450,41 @@ async def search_tenup(
         keys_to_del = [k for k, (_, exp) in INTERNAL_CACHE.items() if now > exp]
         for k in keys_to_del: del INTERNAL_CACHE[k]
 
-    result = await _perform_search(lat, lng, rayon_km, q, date_start, date_end, level, etype)
+    try:
+        result = await _perform_search(lat, lng, rayon_km, q, date_start, date_end, level, etype)
+        
+        # 4. Save to Cache
+        INTERNAL_CACHE[cache_key] = (result, now + CACHE_TTL)
+        return result
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Internal Server Error: {str(e)}")
+
+@app.get("/api/debug")
+async def debug_endpoint():
+    """Helper to debug Vercel environment"""
+    import sys
     
-    # 4. Save to Cache
-    INTERNAL_CACHE[cache_key] = (result, now + CACHE_TTL)
-    return result
+    token = os.environ.get("TENUP_TOKEN")
+    token_status = "Missing"
+    if token:
+        try:
+            t = json.loads(token)
+            token_status = f"Present (Valid JSON), Access Expires: {t.get('expires_in')}"
+        except:
+            token_status = "Present (Invalid JSON)"
+            
+    return {
+        "vercel_env": os.environ.get("VERCEL"),
+        "python_version": sys.version,
+        "tenup_token_status": token_status,
+        "cookie_env_len": len(os.environ.get("TENUP_COOKIE") or "") if os.environ.get("TENUP_COOKIE") else 0,
+        "data_dir": DATA_DIR,
+        "token_path": TOKEN_PATH,
+        "token_file_exists": os.path.exists(TOKEN_PATH),
+        "files_in_data": os.listdir(DATA_DIR) if os.path.exists(DATA_DIR) else "Dir not found"
+    }
 
 async def _perform_search(lat, lng, rayon_km, q, date_start, date_end, level, etype):
     token_data = load_token_file()
