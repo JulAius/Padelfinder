@@ -12,9 +12,16 @@ import httpx
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
-TOKEN_PATH = "data/tenup/token.json"
-COOKIE_PATH = "data/tenup/cookie.txt"
-COOKIE_PATH_ALT = "data/tenup/cookies.txt"
+import os
+import pathlib
+
+# Vercel environment path adjustment
+# When running as api/index.py, we need to point to the project root for data
+BASE_DIR = pathlib.Path(__file__).parent.parent
+TOKEN_PATH = os.path.join(BASE_DIR, "data/tenup/token.json")
+COOKIE_PATH = os.path.join(BASE_DIR, "data/tenup/cookie.txt")
+COOKIE_PATH_ALT = os.path.join(BASE_DIR, "data/tenup/cookies.txt")
+
 TOKEN_URL = "https://login.fft.fr/realms/connect/protocol/openid-connect/token"
 API_BASE = "https://api.fft.fr/fft/v1"
 TENUP_BASE = "https://tenup.fft.fr"
