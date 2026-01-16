@@ -17,10 +17,18 @@ import pathlib
 
 # Vercel environment path adjustment
 # When running as api/index.py, we need to point to the project root for data
+# Vercel environment path adjustment
+# When running as api/index.py, we need to point to the project root for data
 BASE_DIR = pathlib.Path(__file__).parent.parent
-TOKEN_PATH = os.path.join(BASE_DIR, "data/tenup/token.json")
-COOKIE_PATH = os.path.join(BASE_DIR, "data/tenup/cookie.txt")
-COOKIE_PATH_ALT = os.path.join(BASE_DIR, "data/tenup/cookies.txt")
+
+if os.environ.get("VERCEL") == "1":
+    DATA_DIR = "/tmp"
+else:
+    DATA_DIR = os.path.join(BASE_DIR, "data/tenup")
+
+TOKEN_PATH = os.path.join(DATA_DIR, "token.json")
+COOKIE_PATH = os.path.join(DATA_DIR, "cookie.txt")
+COOKIE_PATH_ALT = os.path.join(DATA_DIR, "cookies.txt")
 
 TOKEN_URL = "https://login.fft.fr/realms/connect/protocol/openid-connect/token"
 API_BASE = "https://api.fft.fr/fft/v1"
