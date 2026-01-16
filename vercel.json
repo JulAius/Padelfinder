@@ -1,0 +1,22 @@
+{
+    "builds": [
+        {
+            "src": "server.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "server.py"
+        },
+        {
+            "src": "/web/(.*)",
+            "dest": "/web/$1"
+        },
+        {
+            "src": "/",
+            "dest": "/web/index.html"
+        }
+    ]
+}
