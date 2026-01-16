@@ -112,6 +112,10 @@ def load_cookie_header() -> Optional[str]:
 
 
 async def fetch_cookie_header_via_playwright() -> str:
+    # On Vercel, we can't run Playwright (browsers not installed), so we must fail gracefully
+    if os.environ.get("VERCEL") == "1":
+        raise RuntimeError("Playwright not supported on Vercel. Please set 'TENUP_COOKIE' env var.")
+
     # Import lazily to avoid hard dependency at startup
     from playwright.async_api import async_playwright
 
