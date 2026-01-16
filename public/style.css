@@ -646,7 +646,8 @@ body::before {
   height: 550px;
   margin-bottom: 2rem;
   border-radius: var(--radius-xl);
-  overflow: hidden;
+  overflow: visible;
+  /* Allow popups to extend beyond container */
   border: 1px solid var(--border-light);
   box-shadow:
     var(--shadow-card),
@@ -661,6 +662,10 @@ body::before {
   min-height: 550px;
   background: var(--bg-tertiary);
   filter: contrast(1.05) brightness(0.95);
+  border-radius: var(--radius-xl);
+  /* Apply border radius to map itself */
+  overflow: hidden;
+  /* Clip map tiles but not popups */
 }
 
 /* Floating Map Controls Panel */
