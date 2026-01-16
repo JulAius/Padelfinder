@@ -245,6 +245,10 @@ async def fetch_mobile_api(
     url = f"{API_BASE}/competition/tournois"
     async with httpx.AsyncClient(timeout=30) as client:
         resp = await client.get(url, params=params, headers=headers)
+        if resp.status_code != 200:
+            print(f"[Mobile] Error {resp.status_code} for {url} with params {params}")
+            print(f"[Mobile] Response: {resp.text}")
+        
         if resp.status_code == 401:
             raise HTTPException(status_code=401, detail="Token expiré ou invalide. Relance scripts/tenup_auth.py")
         resp.raise_for_status()
