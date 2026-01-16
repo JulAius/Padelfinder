@@ -910,16 +910,21 @@ body::before {
   transition: all var(--duration) var(--ease);
 }
 
-/* Leaflet Overrides for Popups */
+/* Leaflet Overrides for Popups - Glassmorphism 2026 */
 .leaflet-popup-content-wrapper {
-  background: #0f172a !important;
-  /* Sleek Dark Slate */
+  background: rgba(10, 10, 12, 0.85) !important;
+  backdrop-filter: blur(40px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(40px) saturate(150%) !important;
   color: var(--text-primary) !important;
-  border-radius: 20px !important;
+  border-radius: 18px !important;
   padding: 0 !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7) !important;
+  border: 1px solid rgba(20, 184, 166, 0.25) !important;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0 30px rgba(20, 184, 166, 0.2) !important;
   overflow: hidden;
+  max-width: 360px !important;
 }
 
 .leaflet-popup-content {
@@ -928,8 +933,34 @@ body::before {
 }
 
 .leaflet-popup-tip {
-  background: #0f172a !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: rgba(10, 10, 12, 0.85) !important;
+  backdrop-filter: blur(40px) !important;
+  -webkit-backdrop-filter: blur(40px) !important;
+  border: 1px solid rgba(20, 184, 166, 0.2) !important;
+}
+
+.leaflet-popup-close-button {
+  top: 14px !important;
+  right: 14px !important;
+  color: #94a3b8 !important;
+  font-size: 22px !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  text-align: center !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  text-shadow: none !important;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 50% !important;
+  font-weight: 300 !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: white !important;
+  background: rgba(239, 68, 68, 0.2) !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+  transform: scale(1.1) !important;
 }
 
 .leaflet-popup-close-button {
@@ -2045,6 +2076,7 @@ body::before {
   bottom: -75%;
   right: -20%;
 }
+
 /* ═══════════════════════════════════════════════════════════════════════════
    MOBILE & RESPONSIVE DESIGN (2026 App-Like Feel)
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -2055,28 +2087,39 @@ body::before {
 }
 
 @media (max-width: 1024px) {
+
   /* Adjust layout for tablets/small laptops */
-  .sidebar { width: 280px; padding: 1.5rem 1rem; }
-  .map-container { height: 450px; }
+  .sidebar {
+    width: 280px;
+    padding: 1.5rem 1rem;
+  }
+
+  .map-container {
+    height: 450px;
+  }
 }
 
 @media (max-width: 768px) {
+
   /* --- Global Mobile Layout --- */
   .app {
     height: 100vh;
-    height: 100dvh; /* Dynamic viewport height */
+    height: 100dvh;
+    /* Dynamic viewport height */
     overflow: hidden;
   }
-  
+
   .layout-container {
     flex-direction: column;
-    height: calc(100% - 60px - 70px); /* Minus header & mobile nav */
+    height: calc(100% - 60px - 70px);
+    /* Minus header & mobile nav */
     overflow: hidden;
   }
-  
+
   .content-main {
     padding: 1rem;
-    padding-bottom: 80px; /* Space for mobile nav */
+    padding-bottom: 80px;
+    /* Space for mobile nav */
     height: 100%;
     overflow-y: auto;
   }
@@ -2096,9 +2139,10 @@ body::before {
     -webkit-backdrop-filter: blur(20px);
     border-top: 1px solid var(--border);
     padding: 0.75rem 1.25rem;
-    padding-bottom: env(safe-area-inset-bottom, 0.75rem); /* iPhone Home Bar safe area */
+    padding-bottom: env(safe-area-inset-bottom, 0.75rem);
+    /* iPhone Home Bar safe area */
     z-index: 3000;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
   }
 
   .mobile-nav-btn {
@@ -2113,11 +2157,11 @@ body::before {
     font-weight: 600;
     cursor: pointer;
   }
-  
+
   .mobile-nav-btn svg {
     color: var(--text-primary);
   }
-  
+
   .mobile-view-switcher {
     display: flex;
     background: var(--bg-tertiary);
@@ -2125,7 +2169,7 @@ body::before {
     padding: 4px;
     border: 1px solid var(--border);
   }
-  
+
   .view-switch-btn {
     display: flex;
     align-items: center;
@@ -2140,7 +2184,7 @@ body::before {
     cursor: pointer;
     transition: all 0.2s ease;
   }
-  
+
   .view-switch-btn.active {
     background: var(--accent);
     color: white;
@@ -2155,16 +2199,17 @@ body::before {
     height: 100%;
     z-index: 4000;
     background: var(--bg-primary);
-    transform: translateY(100%); /* Hidden by default */
+    transform: translateY(100%);
+    /* Hidden by default */
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 1.5rem;
     overflow-y: auto;
   }
-  
+
   .sidebar.active {
     transform: translateY(0);
   }
-  
+
   /* Add close button for sidebar */
   .sidebar-header::after {
     content: "✕";
@@ -2173,28 +2218,61 @@ body::before {
     right: 1.5rem;
     font-size: 1.5rem;
     color: var(--text-muted);
-    pointer-events: none; /* Handled by JS on parent click if needed, or we add real btn */
+    pointer-events: none;
+    /* Handled by JS on parent click if needed, or we add real btn */
   }
 
   /* --- View Toggling --- */
   /* If map view is active, hide results & timeline */
-  body.view-map .map-section { display: block; height: 100%; }
-  body.view-map .map-container { height: 100%; border-radius: 0; border: none; margin: 0; }
+  body.view-map .map-section {
+    display: block;
+    height: 100%;
+  }
+
+  body.view-map .map-container {
+    height: 100%;
+    border-radius: 0;
+    border: none;
+    margin: 0;
+  }
+
   body.view-map .timeline-section,
-  body.view-map .results-section { display: none; }
-  body.view-map .content-main { padding: 0; } /* Full screen map */
-  
+  body.view-map .results-section {
+    display: none;
+  }
+
+  body.view-map .content-main {
+    padding: 0;
+  }
+
+  /* Full screen map */
+
   /* If list view is active, hide map */
-  body.view-list .map-section { display: none; }
+  body.view-list .map-section {
+    display: none;
+  }
+
   body.view-list .timeline-section,
-  body.view-list .results-section { display: block; }
-  
+  body.view-list .results-section {
+    display: block;
+  }
+
   /* Refinements */
-  .hero { display: none; } /* Optional: Hide hero to save space, or make very compact */
-  .results-grid { grid-template-columns: 1fr; }
-  
-  .filter-section { padding-bottom: 2rem; } /* More touch space */
-  
+  .hero {
+    display: none;
+  }
+
+  /* Optional: Hide hero to save space, or make very compact */
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-section {
+    padding-bottom: 2rem;
+  }
+
+  /* More touch space */
+
   /* Floating Map Controls on Mobile */
   .map-filters {
     top: auto;
@@ -2203,8 +2281,41 @@ body::before {
     right: 1rem;
     width: auto;
     max-width: none;
-    transform: translateY(150%); /* Hidden by default */
+    transform: translateY(150%);
+    /* Hidden by default */
     transition: transform 0.3s ease;
   }
-  body.view-map .map-filters.active { transform: translateY(0); }
+
+  body.view-map .map-filters.active {
+    transform: translateY(0);
+  }
+
+  /* Mobile Popup Adjustments */
+  .leaflet-popup-content-wrapper {
+    max-width: calc(100vw - 2rem) !important;
+  }
+
+  .tournament-popup {
+    padding: 1.5rem !important;
+    width: 100% !important;
+    max-width: 320px !important;
+  }
+
+  .popup-header {
+    padding-right: 40px !important;
+  }
+
+  .tournament-popup .popup-title {
+    font-size: 1.1rem !important;
+  }
+
+  .popup-contact-item {
+    padding: 0.75rem 1rem !important;
+  }
+
+  /* Ensure popup stays visible and centered */
+  .leaflet-popup {
+    margin-bottom: 80px !important;
+    /* Space for mobile nav */
+  }
 }
